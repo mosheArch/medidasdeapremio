@@ -3,7 +3,7 @@
 Sistema administardor de medidas de apremio
 
 > Install Python3
-> al clonar el repo dentro de la carpeta raíz Crear un entorno virtual con VENV
+> Al clonar el repo dentro de la carpeta raíz Crear un entorno virtual con VENV
 
 python3 -m venv venv
 
