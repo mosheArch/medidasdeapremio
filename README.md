@@ -14,7 +14,7 @@ Sistema administardor de medidas de apremio
  - env\Scripts\activate.bat
 
 #En Unix o MacOS, ejecuta:
- -source env/bin/activate
+ - source env/bin/activate
 
  #Una vez dentro del entorno instalamos el archivo requeriments.txt
 
