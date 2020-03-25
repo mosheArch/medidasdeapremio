@@ -18,5 +18,6 @@ from django.urls import path, include
 from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', views.PruebaView.as_view(), name="home")
+    path('home/', views.PruebaView.as_view(), name="home"),
+    path('', include('app_Mapremio.urls'))
 ]
