@@ -2,11 +2,11 @@ from django import forms
 from .models import MedidasdeApremio
 
 
-class EmpleadosForm(forms.ModelForm):
+class MedidasdeApremioForm(forms.ModelForm):
     class Meta:
         model = MedidasdeApremio
         fields = ['no_expediente', 'motivos', 'SujetoObligado', 'nombreCortoSo', 'cantidad', 'tipoMedida',
-                  'fechaEmision', 'usuario']
+                  'fechaEmision']
         labels = {'class': 'bm-label-floating',
                   'no_expediente': '',
                   'motivos': '',
@@ -14,8 +14,7 @@ class EmpleadosForm(forms.ModelForm):
                   'nombreCortoSo': '',
                   'cantidad': '',
                   'tipoMedida': '',
-                  'fechaEmision': '',
-                  'usuario ': ''
+                  'fechaEmision': ''
                   }
         widgets = {
             'no_expediente': forms.TextInput(
@@ -66,11 +65,11 @@ class EmpleadosForm(forms.ModelForm):
 
                 }
             ),
-            'usuario': forms.Select(
-                attrs={
-                    'class': 'form-control',
-                    'placeholder': 'Usuario'
-
-                }
-            )
+            # 'usuario': forms.Select(
+            #     attrs={
+            #         'class': 'form-control',
+            #         'placeholder': 'Usuario'
+            #
+            #     }
+            # )
         }

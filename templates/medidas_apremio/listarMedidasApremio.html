@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+{% block title %}
+    Listar Medidas
+{% endblock title%}
+{% block content %}
+    <!-- MAIN CONTENT-->
+    <div class="">
+        <br> <div class="section__content section__content--p30">
+        <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive table--no-card m-b-30">
+                            <h3 class="text-center" style="color: #6f42c1">Lista de Medidas de Apremio</h3>
+                            {#        <input class="form-control border-bottom-primary" id="myInput" type="text" placeholder="Buscar...">#}
+                            {% if listarMedidasApremio %}
+                            <table class="table table-borderless table-striped table-earning" id="dataTable">
+                                <thead>
+                                <tr>
+                                    <th>Numero de expediente</th>
+                                    <th>Sujeto Obligado</th>
+                                    <th>Tipo Medida</th>
+                                    <th class="text-right">Cantidad</th>
+                                    <th class="text-right">Fecha Emision</th>
+                                    <th class="text-right">Acciones</th>
+                                </tr>
+                                </thead>
+                                <tbody id="demo-info">
+                                {% for lista in listarMedidasApremio %}
+                                    <tr>
+                                        <td>{{ lista.no_expediente }}</td>
+                                        <td>{{lista.nombreCortoSo}}</td>
+                                        <td>{{ lista.tipoMedida }}</td>
+                                        <td class="text-right">{{lista.cantidad}}</td>
+                                        <td class="text-right">{{ lista.fechaEmision }}</td>
+
+                                        <td>
+                                            <a href="{% url 'actualizarM' lista.id%}" class="badge badge-warning">EDITAR</a>
+                                            <a href="{% url 'eliminarM' lista.id%}" class="badge badge-danger">ELIMINAR</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                             {% else %}
+                <h1>No se encontraron registros</h1>
+            {% endif %}
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+        </div>
+    </div>
+    </div>
+    </html>
+{% endblock content %}
