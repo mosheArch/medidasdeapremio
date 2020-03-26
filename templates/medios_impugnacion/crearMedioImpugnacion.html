@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <div class="section__content section__content--p35">
+            <br>
+            <div class="card">
+                <div class="row" >
+                    <div class="col-lg-12">
+                        <div class="" >
+                            <h3 class="text-center" style="color: #6f42c1">Medio de Impugnación</h3>
+                        </div>
+                        <hr>
+                        <form  method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% if error %}
+                                <h1>{{ error }}</h1>
+
+                            {% else %}
+                                <div class="row">
+                                <div class="col-lg-6">
+                                    <p style="color: blue">Expediete</p>
+                                    <div class="form-group">
+                                        {{ form.no_expediente }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p style="color: blue">Medida de Apremio</p>
+                                    <div class="form-group">
+                                    {{ form.medidas_apremio }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p style="color: blue">Fecha de Emplazamiento</p>
+                                    <div class="form-group">
+                                        {{ form.fecha_emplazamiento }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p style="color: blue">Tipo de medio de impugnación</p>
+                                    <div class="form-group">
+                                        {{ form.tipo_medioImpugnacion }}
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        {{ form.efecto_medioImpugnacion }}
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        {{ form.comentarios }}
+                                    </div>
+                                </div>
+
+
+                                </div>
+                                <div>
+                                    <button id="payment-button" type="submit" class="btn btn-lg btn-outline-secondary btn-block">
+                                        <i class="fa fa-save fa-lg"></i>&nbsp;
+                                        <span id="payment-button-amount">Guardar</span>
+                                        <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                    </button>
+                                </div>
+                            {% endif %}
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock content %}

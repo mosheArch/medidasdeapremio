@@ -60,8 +60,9 @@ class MedidasdeApremioForm(forms.ModelForm):
             ),
             'fechaEmision': forms.DateInput(
                 attrs={
+                    'type': 'date',
                     'class': 'form-control',
-                    'placeholder': 'Fecha de emisión'
+                    'placeholder': 'Fecha de Emisión',
 
                 }
             ),
