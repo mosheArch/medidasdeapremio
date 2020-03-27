@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-
-        <div class="section__content section__content--p35">
+    <div class="section__content section__content--p35">
             <br>
             <div class="card">
                 <div class="row" >
                     <div class="col-lg-12">
                         <div class="" >
-                            <h3 class="text-center" style="color: #6f42c1">Medida de Apremio</h3>
+                            <h3 class="text-center" style="color: #6f42c1">Resoluciones</h3>
                         </div>
                         <hr>
                         <form  method="post" enctype="multipart/form-data">
@@ -18,45 +17,45 @@
                             {% else %}
                                 <div class="row">
                                 <div class="col-lg-6">
+                                    <p style="color: blue">Expediente</p>
                                     <div class="form-group">
                                         {% for error in form.no_expediente.errors %}
                                             <p style="color: red">{{ error }}</p>
                                         {% endfor %}
                                         {{ form.no_expediente }}
+
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
+                                    <p style="color: blue">Medio de Impugnación</p>
                                     <div class="form-group">
-                                    {{ form.SujetoObligado }}
+                                    {{ form.medioImpugnacion }}
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
+                                    <p style="color: blue">Fecha de Resolucion</p>
                                     <div class="form-group">
-                                        {{ form.nombreCortoSo }}
+                                        {{ form.fecha_resolucion }}
                                     </div>
                                 </div>
+
+                                 <div class="col-lg-6">
+                                     <p style="color: blue">Multa</p>
+                                    <div class="form-group">
+                                        {{ form.multa }}
+                                    </div>
+                                </div>
+
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        {{ form.cantidad }}
+                                        {{ form.puntos_resolucion }}
                                     </div>
                                 </div>
 
 
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        {{ form.motivos }}
-                                    </div>
-                                </div>
-
-
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        {{ form.tipoMedida }}
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        {{ form.fechaEmision }}
+                                        {{ form.sentido_resolucion }}
                                     </div>
                                 </div>
 

@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 {% block title %}
-    Listar Medios
+    Listar Resolucion
 {% endblock title%}
 {% block content %}
     <!-- MAIN CONTENT-->
@@ -13,32 +13,36 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="table-responsive table--no-card m-b-30">
-                            <h3 class="text-center" style="color: #6f42c1">Lista de Medios de Impugnación</h3>
+                            <h3 class="text-center" style="color: #6f42c1">Lista de Resoluciones</h3>
                             {#        <input class="form-control border-bottom-primary" id="myInput" type="text" placeholder="Buscar...">#}
-                            {% if listarMedioImpugnacion %}
+                            {% if listarResoluciones %}
                             <table class="table table-striped table-earning table-bordered nowrap" id="descarga">
                                 <thead>
                                 <tr>
                                     <th>Numero de expediente</th>
-                                    <th>Medida de Apremio</th>
-                                    <th>Fecha de Emplazamiento</th>
-                                    <th class="text-right">Tipo de medio de impugnación</th>
-                                    <th class="text-right">Efecto de medio de impugnación</th>
+                                    <th>Sujeto Obligado</th>
+                                    <th>Medio de Impugnacion</th>
+                                    <th>Fecha de Resolucion</th>
+                                    <th class="text-right">Multa</th>
+                                    <th class="text-right">Puntos de la Resolución</th>
+                                    <th class="text-right">Sentido de la Resolución</th>
                                     <th class="text-right">Acciones</th>
                                 </tr>
                                 </thead>
                                 <tbody id="demo-info">
-                                {% for lista in listarMedioImpugnacion %}
+                                {% for lista in listarResoluciones %}
                                     <tr>
                                         <td>{{ lista.no_expediente }}</td>
-                                        <td>{{lista.medidas_apremio}}</td>
-                                        <td>{{ lista.fecha_emplazamiento }}</td>
-                                        <td >{{lista.tipo_medioImpugnacion}}</td>
-                                        <td >{{ lista.efecto_medioImpugnacion }}</td>
+                                        <td>{{lista.medioImpugnacion.medidas_apremio.SujetoObligado}}</td>
+                                        <td>{{lista.medioImpugnacion}}</td>
+                                        <td>{{ lista.fecha_resolucion }}</td>
+                                        <td class="text-right">{{lista.multa}}</td>
+                                        <td class="text-right">{{ lista.puntos_resolucion }}</td>
+                                        <td class="text-right">{{ lista.sentido_resolucion }}</td>
 
                                         <td>
-                                            <a href="{% url 'actualizarMedio' lista.id%}" class="badge badge-warning">EDITAR</a>
-                                            <a href="{% url 'eliminarMedio' lista.id%}" class="badge badge-danger">ELIMINAR</a>
+                                            <a href="{% url 'actualizarResolucion' lista.id%}" class="badge badge-warning">EDITAR</a>
+                                            <a href="{% url 'eliminarResolucion' lista.id%}" class="badge badge-danger">ELIMINAR</a>
                                         </td>
                                     </tr>
                                 {% endfor %}

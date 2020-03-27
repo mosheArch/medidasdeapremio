@@ -18,9 +18,13 @@
                             {% else %}
                                 <div class="row">
                                 <div class="col-lg-6">
-                                    <p style="color: blue">Expediete</p>
+                                    <p style="color: blue">Expediente</p>
                                     <div class="form-group">
+                                        {% for error in form.no_expediente.errors %}
+                                            <p style="color: red">{{ error }}</p>
+                                        {% endfor %}
                                         {{ form.no_expediente }}
+
                                     </div>
                                 </div>
                                 <div class="col-lg-6">

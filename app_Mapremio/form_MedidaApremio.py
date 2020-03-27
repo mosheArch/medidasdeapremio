@@ -58,7 +58,7 @@ class MedidasdeApremioForm(forms.ModelForm):
 
                 }
             ),
-            'fechaEmision': forms.DateInput(
+            'fechaEmision': forms.TextInput(
                 attrs={
                     'type': 'date',
                     'class': 'form-control',
