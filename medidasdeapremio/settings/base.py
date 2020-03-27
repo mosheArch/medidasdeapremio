@@ -20,7 +20,8 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'app_Mapremio',
     'app_MediosImpugnacion',
-    'app_Resoluciones'
+    'app_Resoluciones',
+    'users',
 ]
 
 MIDDLEWARE = [

@@ -16,10 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core import views
+from django.contrib.auth.decorators import login_required
+from users.views import Login, salirUsuario
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', views.Dashboard, name="home"),
+    path('', login_required(views.Dashboard), name="home"),
     path('', include('app_Mapremio.urls')),
     path('', include('app_MediosImpugnacion.urls')),
-    path('', include('app_Resoluciones.urls'))
+    path('', include('app_Resoluciones.urls')),
+    path('accounts/login/', Login.as_view(), name='LogIn'),
+    path('logout/', login_required(salirUsuario), name='salir'),
 ]
+admin.site.site_header = 'Administrador de medisa de Apremio'
